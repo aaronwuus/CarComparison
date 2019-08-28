@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CarComparison.Core.Entities.Car>
+    
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Year
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Tcc Rating
+            </th>
+            <th>
+                Hwy Mpg
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Make)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TccRating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HwyMpg)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

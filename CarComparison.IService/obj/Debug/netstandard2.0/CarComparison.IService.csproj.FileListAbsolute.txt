@@ -1,0 +1,14 @@
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\CarComparison.IService.deps.json
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\CarComparison.IService.dll
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\CarComparison.IService.pdb
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\CarComparison.Core.dll
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\CarComparison.Core.pdb
+F:\source\CarComparison\CarComparison.IService\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.csprojAssemblyReference.cache
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.csproj.CoreCompileInputs.cache
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.AssemblyInfoInputs.cache
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.AssemblyInfo.cs
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.csproj.CopyComplete
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.dll
+F:\source\CarComparison\CarComparison.IService\obj\Debug\netstandard2.0\CarComparison.IService.pdb

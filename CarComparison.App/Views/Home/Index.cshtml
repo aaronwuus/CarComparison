@@ -1,0 +1,178 @@
+﻿@model IEnumerable<CarComparison.Core.Entities.Car>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Html.PartialAsync("CarList", model: Model)
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        <p>A function to calculate newest vehicles in order</p>
+                        <input name='newest' class="btn btn-group btn-info" id="newest" type="button" value="Newest" />
+                    </li>
+                    <li>
+                        <p>A function to calculate alphabetized List of vehicles</p>
+                        <input name='alphabetized' class="btn btn-group btn-info" id="alphabetized" type="button" value="Alphabetized" />
+                    </li>
+                    <li>
+                        <p>function to calculate ordered List of Vehicles by Price</p>
+                        <input name='price' class="btn btn-group btn-info" id="price" type="button" value="Price" />
+                    </li>
+                    <li>
+                        <p>function to calculate the best value</p>
+                        <input name='bestValue' class="btn btn-group btn-info" id="bestValue" type="button" value="BestValue" />
+                    </li>
+                    <li>
+                        <p>function to return a random car from the list</p>
+                        <input name='random' class="btn btn-group btn-info" id="random" type="button" value="Random" />
+                    </li>
+                    <li>
+                        <p>function to calculate full consumption for a given distance</p>
+                        @Html.DropDownList("carId", ViewBag.items as IEnumerable<SelectListItem>)
+                        Distance:
+                        <input type="text" name="consumption" id="consumption" />
+                        <input name='consumptionByDistance' class="btn btn-group btn-info" id="consumptionByDistance" type="button" value="Consumption" />
+                    </li>
+                    <li>
+                        <p>A function to return average MPG by year</p>
+                        @Html.DropDownList("year", ViewBag.years as IEnumerable<SelectListItem>)
+                        <input name='averageMpgByYear' class="btn btn-group btn-info" id="averageMpgByYear" type="button" value="Average Mpg" />
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h1>Result</h1>
+                <div class="form-text" name="resultDiv" id="resultDiv">
+                    <table class="table table-striped result" id="result"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+@section Scripts {
+    <script>
+        $(function () {
+            $("#newest").click(function () {
+                GetMultiResults("GetVehicleByNewest");
+            });
+            $("#alphabetized").click(function () {
+                GetMultiResults("GetVehicleByAlphabetized");
+            });
+            $("#price").click(function () {
+                GetMultiResults("GetVehicleByPrice");
+            });
+            $("#bestValue").click(function () {
+                GetSingleResult("GetVehicleByBestValue");
+            });
+            $("#consumptionByDistance").click(function () {
+                GetCumption("GetConsumptionByDistance");
+            });
+            $("#random").click(function () {
+                GetSingleResult("GetVehicleByRandom");
+            });
+            $("#averageMpgByYear").click(function () {
+                GetAverage("GetAverageMpgByYear");
+            });
+        })
+
+        function GetSingleResult(action) {
+            $.getJSON({
+                url: 'api/CarComparison/' + action,
+                dataType: 'JSON',
+                type: 'GET',
+                success: function (result) {
+                    $("#result").empty();
+                    console.log(result);
+                    $("#result").append(`
+                            <tr>
+                            <th>ID</th>&nbsp
+                            <th>Make</th>&nbsp
+                            <th>Mode</th>&nbsp
+                            <th>Color</th>&nbsp
+                            <th>Year</th>&nbsp
+                            <th>Price</th>&nbsp
+                            <th>Tcc Rating</th>&nbsp
+                            <th>hwy Mpg</th>&nbsp<tr>
+                        <tr>
+                        <td>${result.id}</td>&nbsp
+                        <td>${result.make}</td>&nbsp
+                        <td>${result.model}</td>&nbsp
+                        <td>${result.color}</td>&nbsp
+                        <td>${result.year}</td>&nbsp
+                        <td>${result.price}</td>&nbsp
+                        <td>${result.tccRating}</td>&nbsp
+                        <td>${result.hwyMpg}</td>&nbsp
+                        <br/></tr>`
+                    );
+                }
+            });
+        };
+
+        function GetMultiResults(action) {
+            $.getJSON({
+                url: 'api/CarComparison/' + action,
+                dataType: 'JSON',
+                type: 'GET',
+                success: function (result) {
+                    $("#result").empty();
+                    console.log(result);
+                    $("#result").append(`
+                            <tr>
+                            <th>ID</th>&nbsp
+                            <th>Make</th>&nbsp
+                            <th>Mode</th>&nbsp
+                            <th>Color</th>&nbsp
+                            <th>Year</th>&nbsp
+                            <th>Price</th>&nbsp
+                            <th>Tcc Rating</th>&nbsp
+                            <th>hwy Mpg</th>&nbsp<tr>
+                        `);
+                    $.each(result, function (key, val) {
+                        $("#result").append(`
+                            <tr>
+                            <td>${val.id}</td>&nbsp
+                            <td>${val.make}</td>&nbsp
+                            <td>${val.model}</td>&nbsp
+                            <td>${val.color}</td>&nbsp
+                            <td>${val.year}</td>&nbsp
+                            <td>${val.price}</td>&nbsp
+                            <td>${val.tccRating}</td>&nbsp
+                            <td>${val.hwyMpg}</td>&nbsp
+                            <br/></tr>`
+                        );
+                    })
+                }
+            });
+        };
+        function GetCumption(action) {
+            var carid = $("#carId option:selected").val();
+            var distance = $("#consumption").val();
+            $.getJSON({
+                url: 'api/CarComparison/' + action + '/' + carid + '/' + distance,
+                dataType: 'JSON',
+                type: 'GET',
+                success: function (result) {
+                    $("#result").empty();
+                    console.log(result);
+                    $("#result").append(result);
+                }
+            });
+        };
+        function GetAverage(action) {
+            var year = $("#year option:selected").val();
+            $.getJSON({
+                url: 'api/CarComparison/' + action + '/' + year,
+                dataType: 'JSON',
+                type: 'GET',
+                success: function (result) {
+                    $("#result").empty();
+                    $("#result").append(result);
+                }
+            });
+        };
+    </script>
+}
+

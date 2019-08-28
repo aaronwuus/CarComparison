@@ -1,0 +1,16 @@
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.DataAccess.deps.json
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.DataAccess.dll
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.DataAccess.pdb
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.csprojAssemblyReference.cache
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.csproj.CoreCompileInputs.cache
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.AssemblyInfoInputs.cache
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.AssemblyInfo.cs
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.dll
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.pdb
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.IDataAccess.dll
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.IDataAccess.pdb
+F:\source\CarComparison\CarComparison.DataAccess\obj\Debug\netstandard2.0\CarComparison.DataAccess.csproj.CopyComplete
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.Core.dll
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\CarComparison.Core.pdb
+F:\source\CarComparison\CarComparison.DataAccess\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
